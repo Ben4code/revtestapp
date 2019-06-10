@@ -1,6 +1,8 @@
-<h2>Exchanger App</h2>
+<h2>Currency Exchanger App</h2>
 
 This a currency exchanger application that uses data from exchangeratesapi.io to convert between currencies.
+
+Currently this app only support exchange for currencies in Pounds, Dollar and Euros. Hopefully more will added shortly.
 
 The project was made using create-react-app and react-redux.
 
