@@ -13,7 +13,12 @@ class Select extends Component {
     }
 
     onChange =(val, otherPocket, pockets) => {
-        if (this.props.select === 'A') {
+        if (val === otherPocket.title) {
+            otherPocket = pockets.filter(pocket => {
+                return pocket.title !== val
+            })[0];
+        }
+        if (this.props.select === 'A') {  
             this.props.selectChangeA(val, otherPocket, pockets)
         }else{
             this.props.selectChangeB(val, otherPocket, pockets)

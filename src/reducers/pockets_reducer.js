@@ -34,13 +34,15 @@ export default function (state = initialState, action) {
                 selectedPocket: action.payload.selectedPocket,
                 nextPocket: action.payload.nextPocket,
                 rates: action.payload.rates,
+                exchangeRate: action.payload.exchangeRate
             }
         case SELECT_CHANGE_B:
             return {
                 ...state,
                 selectedPocket: action.payload.selectedPocket,
                 nextPocket: action.payload.nextPocket,
-                rates: action.payload.rates
+                rates: action.payload.rates,
+                exchangeRate: action.payload.exchangeRate
             }
         case EXCHANGE_CLICKED:
             return {

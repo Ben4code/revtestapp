@@ -56,6 +56,8 @@ class Exchange extends Component {
 
     render() {
         const {selectedPocket, nextPocket, exchangeRate} = this.props;
+        console.log(exchangeRate);
+        
         return (
             <div >
                 <div onClick={()=> this.props.goBack()}>

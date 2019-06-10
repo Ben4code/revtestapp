@@ -48,7 +48,6 @@ export const setExchangeRate = (rates, currency) => {
     const exchangeRate = Object.entries(rates).filter(item => {
         return item[0] === currency;
     })[0];
-
     return {
         type: SET_EXCHANGERATE,
         payload: exchangeRate
@@ -64,21 +63,14 @@ export const selectChangeA = (value, otherPocket, pockets) => dispatch => {
     axios.get(`https://api.exchangeratesapi.io/latest?base=${pocketUpdate.title}`)
         .then(res => {
             //Update exchange rate component
-            setExchangeRate(res.data.rates, otherPocket.title)
-            // let otherSelect = '';
-            if (value === otherPocket.title) {
-                otherPocket = pockets.filter(pocket => {
-                    return pocket.title !== value
-                })[0];
-            }
+            const xRate = setExchangeRate(res.data.rates, otherPocket.title).payload
             dispatch({
                 type: SELECT_CHANGE_A,
                 payload: {
                     selectedPocket: pocketUpdate,
                     nextPocket: otherPocket,
                     rates: res.data.rates,
-                    primaryInput: '',
-                    secondaryInput: ''
+                    exchangeRate: xRate
                 }
             })
         })
@@ -102,21 +94,15 @@ export const selectChangeB = (value, otherPocket, pockets) => dispatch => {
     axios.get(`https://api.exchangeratesapi.io/latest?base=${pocketUpdate.title}`)
         .then(res => {
             //Update exchange rate component
-            setExchangeRate(res.data.rates, otherPocket.title)
-            //let otherSelect = '';
-            if (value === otherPocket.title) {
-                otherPocket = pockets.filter(pocket => {
-                    return pocket.title !== value
-                })[0];
-            }
+            const xRate = setExchangeRate(res.data.rates, otherPocket.title).payload
+            
             dispatch({
                 type: SELECT_CHANGE_B,
                 payload: {
                     selectedPocket: otherPocket,
                     nextPocket: pocketUpdate,
                     rates: res.data.rates,
-                    primaryInput: '',
-                    secondaryInput: ''
+                    exchangeRate: xRate
                 }
             })
         })
