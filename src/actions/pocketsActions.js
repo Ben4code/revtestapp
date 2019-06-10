@@ -48,6 +48,8 @@ export const setExchangeRate = (rates, currency) => {
     const exchangeRate = Object.entries(rates).filter(item => {
         return item[0] === currency;
     })[0];
+    console.log("Interval");
+    
     return {
         type: SET_EXCHANGERATE,
         payload: exchangeRate
