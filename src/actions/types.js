@@ -1,0 +1,12 @@
+
+
+
+export const GET_POCKETS = 'GET_POCKETS'; 
+export const POCKET_CLICKED = 'POCKET_CLICKED';
+export const SELECT_CHANGE_A = 'SELECT_CHANGE_A';
+export const SELECT_CHANGE_B = 'SELECT_CHANGE_B';
+export const SET_EXCHANGERATE = 'SET_EXCHANGERATE';
+export const EXCHANGE_CLICKED = 'EXCHANGE_CLICKED';
+export const GO_BACK = 'GO_BACK';
+export const GET_ERRORS = 'GET_ERRORS';
+export const CLEAR_ERRORS = 'CLEAR_ERRORS';
