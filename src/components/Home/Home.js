@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Pocket from './Pockets/Pocket';
 import { connect } from 'react-redux';
 import { getPockets, pocketClicked, clearError } from '../../actions/pocketsActions';
-import ExchangeRate from './Exchange/ExchangeRates'
+import ExchangeRate from './ExchangeRate/ExchangeRates'
 import ImageBg from '../../assets/img/Currency.png';
 import './Home.css';
 
@@ -12,6 +12,10 @@ import './Home.css';
 
 
 class Home extends Component {
+
+    componentDidMount() {
+        this.props.getPockets();
+    }
 
     showPocket = (pockets) => {
         const { pocketClicked } = this.props;
@@ -24,7 +28,17 @@ class Home extends Component {
         })
     }
 
+    showError = (error) => {
+        setTimeout(() => {
+            this.props.clearError();
+        }, 2000);
+        return <p className="error">{error}</p>
+    }
+
     render() {
+
+        const { pockets, showRates, error } = this.props;
+
         return (
             <div data-test="homeComponent" className="home " style={{ backgroundImage: `url(${ImageBg})` }}>
                 <div className="home__content">
