@@ -1,6 +1,5 @@
 import pocketDoc from '../PocketsDoc/index';
 import {testStore} from '../../Ultils/index';
-import {getPockets} from './../actions/pocketsActions';
 
 
 
