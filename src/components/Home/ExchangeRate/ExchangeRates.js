@@ -11,7 +11,11 @@ class Exchange extends Component {
         secondaryInput: ''
     }
     componentDidMount() {
-        this.props.setExchangeRate(this.props.rates, this.props.nextPocket.title)
+        this.props.setExchangeRate(this.props.rates, this.props.nextPocket.title);
+        setInterval(()=>{
+            this.props.setExchangeRate(this.props.rates, this.props.nextPocket.title);
+        }, 10000)
+        
     }
 
     input1Changed = (e, modelValue, viewValue) => {
@@ -56,8 +60,6 @@ class Exchange extends Component {
 
     render() {
         const {selectedPocket, nextPocket, exchangeRate} = this.props;
-        console.log(exchangeRate);
-        
         return (
             <div >
                 <div onClick={()=> this.props.goBack()}>
