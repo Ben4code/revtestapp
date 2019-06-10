@@ -47,9 +47,7 @@ export const goBack = () => {
 export const setExchangeRate = (rates, currency) => {
     const exchangeRate = Object.entries(rates).filter(item => {
         return item[0] === currency;
-    })[0];
-    console.log("Interval");
-    
+    })[0];    
     return {
         type: SET_EXCHANGERATE,
         payload: exchangeRate
