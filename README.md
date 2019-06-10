@@ -1,3 +1,5 @@
+<h2>Exchanger App</h2>
+
 This a currency exchanger application that uses data from exchangeratesapi.io to convert between currencies.
 
 The project was made using create-react-app and react-redux.
